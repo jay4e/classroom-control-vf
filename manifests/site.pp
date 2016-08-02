@@ -43,5 +43,5 @@ node default {
   # Example:
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
-  notify { "Release 0.1.1": }
+  notify { "Release 0.1.2": }
 }
