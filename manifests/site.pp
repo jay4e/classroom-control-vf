@@ -47,6 +47,8 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   notify { "Release 0.1.2": }
   
+  package { "cowsay" : ensure => 'present' }
+  
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd": }
   
 }
