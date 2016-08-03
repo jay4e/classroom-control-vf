@@ -42,3 +42,4 @@ class nginx {
     hasrestart => 'true',
     require    => Package['nginx']
   }
+}
