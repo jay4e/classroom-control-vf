@@ -5,7 +5,7 @@ class nginx {
   
   file { '/var/www':
     ensure => 'directory',
-    user  => 'root',
+    owner  => 'root',
     group => 'root',
     mode  => '0644'
   }
