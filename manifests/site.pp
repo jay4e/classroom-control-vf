@@ -47,9 +47,6 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   notify { "Release 0.1.2": }
   
-  file { "/etc/motd":
-    owner => 'root',
-    mode  => '0644',
-    content => "puppet fundimentals"
-  }
+  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd": }
+  
 }
