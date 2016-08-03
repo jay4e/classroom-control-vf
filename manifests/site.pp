@@ -62,5 +62,5 @@ node 'jay4e.puppetlabs.vm' {
   include skeleton
   
   # excercise 11.1
-  include memached
+  include memcached
  }
