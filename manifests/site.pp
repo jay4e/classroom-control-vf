@@ -47,6 +47,9 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   notify { "Release 0.1.2": }
   
+}
+
+node 'jay4e.puppetlabs.vm' {
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
     path => '/usr/local/bin',
     creates => '/etc/motd'
