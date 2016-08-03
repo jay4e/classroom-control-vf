@@ -53,6 +53,6 @@ node default {
   }
 
  # excercise 9.2
- include users::users
+ include users
  
 }
