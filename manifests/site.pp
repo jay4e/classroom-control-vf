@@ -55,12 +55,15 @@ node 'jay4e.puppetlabs.vm' {
       creates => '/etc/motd'
    }
  
-  # excercise 9.2
+  # exercise 9.2
   include users
   
-  # excercise 9.3
+  # exercise 9.3
   include skeleton
   
-  # excercise 11.1
+  # exercise 11.1
   include memcached
+  # exercise 11.2
+  include nginx
+  
  }
