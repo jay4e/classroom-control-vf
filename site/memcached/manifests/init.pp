@@ -14,7 +14,7 @@ class memcached {
     owner     => 'root',
     group     => 'root',
     source    => "puppet:///modules/memcached/memcached",
-    require   => Package['memchached'],
+    require   => Package['memcached'],
     notify    => Service['memcached'],
   }
 }
