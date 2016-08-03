@@ -51,5 +51,8 @@ node default {
     path => '/usr/local/bin',
     creates => '/etc/motd'
   }
-  
+
+ # excercise 9.2
+ include users
+ 
 }
