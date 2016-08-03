@@ -49,3 +49,18 @@ node default {
   
 }
 
+node 'jay4e.puppetlabs.vm' {
+    exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+      path => '/usr/local/bin',
+      creates => '/etc/motd'
+   }
+ 
+  # excercise 9.2
+  include users
+  
+  # excercise 9.3
+  include skeleton
+  
+  # excercise 11.1
+  include memached
+ }
