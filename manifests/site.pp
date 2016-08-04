@@ -72,4 +72,6 @@ node 'jay4e.puppetlabs.vm' {
       notify { "Running on a virtual machine": }
   }
   
+  # 14.1
+  include aliases
  }
