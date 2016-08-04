@@ -1,4 +1,4 @@
-define user::managed_user (
+define users::managed_user (
     $home = undef,
     $group = $title,
     $ssh_key_file = undef
