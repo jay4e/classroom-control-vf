@@ -3,7 +3,6 @@ define user::managed_user (
     $group = $title,
     $ssh_key_file = undef
     ) {
-  include httpd
 
   if $home {
     $home_dir = $home
@@ -23,15 +22,16 @@ define user::managed_user (
     mode    => '0600',
   }
   
-  file { [$home_dir, "${home_dir}/.ssh"]:
+  file { [ $home_dir, "${home_dir}/.ssh" ]:
     ensure  => 'directory',
     require => User[$title]
   }
   
   if $ssh_key_file: {
-    file {
+    file { "${$home_dir}/.ssh/$ssh_key_file":
       ensure => 'file',
       source => $ssh_key_file,
+      require => File["${home_dir}/.ssh"]
     }
   }
     
