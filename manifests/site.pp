@@ -68,4 +68,8 @@ node 'jay4e.puppetlabs.vm' {
   # exercise 11.2
   include nginx
   
+  if $is_virtual {
+      notify { "Running on a virtual machine" }
+  }
+  
  }
