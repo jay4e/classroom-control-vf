@@ -1,0 +1,8 @@
+ server {
+    listen 80;
+
+    root <%= @root_dir -%>/<%= @document_dir -%>;
+    index index.html index.htm;
+
+    server_name _;
+}
