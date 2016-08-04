@@ -17,13 +17,13 @@ define user::managed_user (
     home => $home_dir,
   }
   
-  File {
+  File { 
     owner   => $title,
     group   => $group,
     mode    => '0600',
   }
   
-  file { [$home_dir, "${home_dir}/.ssh":
+  file { [$home_dir, "${home_dir}/.ssh"]:
     ensure  => 'directory',
     require => User[$title]
   }
