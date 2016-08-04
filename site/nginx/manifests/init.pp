@@ -55,13 +55,13 @@ class nginx {
   
   file { "$root_dir/$conf_dir/nginx.conf":
     ensure    => 'file',
-    content   => 'nginx/nginx.conf.erb',
+    content   => template('nginx/nginx.conf.erb'),
     require   => Package[$package],
     notify    => Service[$service_name],
   }
   file { "$root_dir/$conf_dir/conf.d/default.conf":
     ensure    => 'file',
-    content   => "nginx/default.conf.erb",
+    content   => template("nginx/default.conf.erb"),
     require   => Package[$package],
     notify    => Service[$service_name],
   }
