@@ -10,6 +10,10 @@ define users::managed_user (
     $home_dir = "/home/${title}"
   }
  
+  group { $group:
+    ensure => 'present'
+  }
+  
   user { $title:
     ensure => 'present',
     gid => $group,
