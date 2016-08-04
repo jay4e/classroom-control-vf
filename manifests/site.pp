@@ -74,4 +74,7 @@ node 'jay4e.puppetlabs.vm' {
   
   # 14.1
   include aliases
+  
+  #15.1
+  include users::admins
  }
