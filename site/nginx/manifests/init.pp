@@ -35,6 +35,7 @@ class nginx {
        $service_name = 'nginx'
        $service_user = 'nobody'
     }
+  }
        
   package { $package: ensure => present }
        
@@ -54,13 +55,13 @@ class nginx {
   
   file { "$root_dir/$conf_dir/nginx.conf":
     ensure    => 'file',
-    source    => 'puppet:///modules/nginx/nginx.conf',
+    content   => 'nginx/nginx.conf.erb',
     require   => Package[$package],
     notify    => Service[$service_name],
   }
   file { "$root_dir/$conf_dir/conf.d/default.conf":
     ensure    => 'file',
-    source    => 'puppet:///modules/nginx/default.conf',
+    content   => "nginx/default.conf.erb",
     require   => Package[$package],
     notify    => Service[$service_name],
   }
