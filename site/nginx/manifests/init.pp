@@ -1,7 +1,7 @@
 
 class nginx {
   
-  case $family {
+  case $os.family {
     'Redhat': {
        $package = 'nginx'
        $owner = 'root'
