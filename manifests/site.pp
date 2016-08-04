@@ -54,7 +54,9 @@ node 'jay4e.puppetlabs.vm' {
       path => '/usr/local/bin',
       creates => '/etc/motd'
    }
- 
+  
+  include examples::fundamentals
+  
   # exercise 9.2
   include users
   
