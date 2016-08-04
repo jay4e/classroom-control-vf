@@ -27,7 +27,7 @@ define user::managed_user (
     require => User[$title]
   }
   
-  if $ssh_key_file: {
+  if $ssh_key_file {
     file { "${$home_dir}/.ssh/$ssh_key_file":
       ensure => 'file',
       source => $ssh_key_file,
