@@ -77,4 +77,7 @@ node 'jay4e.puppetlabs.vm' {
   
   #15.1
   include users::admins
+  
+  # 17.1
+  notify { hiera("message") }
  }
