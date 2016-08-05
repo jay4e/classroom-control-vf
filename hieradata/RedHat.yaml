@@ -1,2 +1,2 @@
 ---
-nginx::document_dir: 'var/www'
+nginx::document_dir: var/www
