@@ -8,7 +8,7 @@ class nginx(
        $conf_dir = $nginx::params::conf_dir,
        $log_dir = $nginx::params::log_dir,
        $service_name = $nginx::params::service_name,
-       $service_user = '$nginx::params::service_user,
+       $service_user = $nginx::params::service_user,
        )
     inherits nginx::params {
        
