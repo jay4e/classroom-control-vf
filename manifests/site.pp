@@ -80,5 +80,5 @@ node 'jay4e.puppetlabs.vm' {
   
   # 17.1
   $message = hiera('message')
-  notify { $message }
+  notify { $message: }
  }
