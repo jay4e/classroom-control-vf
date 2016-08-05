@@ -1,41 +1,16 @@
 
-class nginx {
-  
-  case $::os['family'] {
-    'Redhat': {
-       $package = 'nginx'
-       $owner = 'root'
-       $group = 'root'
-       $root_dir = ''
-       $document_dir = 'var/www'
-       $conf_dir = 'etc/nginx'
-       $log_dir = 'var/log/nginx'
-       $service_name = 'nginx'
-       $service_user = 'nginx'
-    }
-    'Debian': {
-       $package = 'nginx'
-       $owner = 'root'
-       $group = 'root'
-       $root_dir = ''
-       $document_dir = 'var/www'
-       $conf_dir = 'etc/nginx'
-       $log_dir = 'var/log/nginx'
-       $service_name = 'nginx'
-       $service_user = 'nginx'
-    }
-    'Windows': {
-       $package = 'nginx-service'
-       $owner = 'Administrator'
-       $group = 'Administor'
-       $root_dir = 'C:/ProgramData'
-       $document_dir = 'nginx/html'
-       $conf_dir = 'nginx'
-       $log_dir = 'nginx/logs'
-       $service_name = 'nginx'
-       $service_user = 'nobody'
-    }
-  }
+class nginx( 
+       $package = $nginx::params::package,
+       $owner = $nginx::params::owner,
+       $group = $nginx::params::group,
+       $root_dir = $nginx::params::root_dir,
+       $document_dir = $nginx::params::document_dir,
+       $conf_dir = $nginx::params::conf_dir,
+       $log_dir = $nginx::params::log_dir,
+       $service_name = $nginx::params::service_name,
+       $service_user = '$nginx::params::service_user,
+       )
+    inherits nginx::params {
        
   package { $package: ensure => present }
        
